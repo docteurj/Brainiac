@@ -1,0 +1,2 @@
+Buttons (pictures of RPS): Disabled once one is clicked
+add counters
