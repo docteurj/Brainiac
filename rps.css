@@ -1,6 +1,5 @@
-html, body {
-  height: 100%;
-  width: 100%;
+html {
+  background-image: url('https://cdn.vox-cdn.com/thumbor/pkHxfK0krfuUMtWxMMuh5_A1oN4=/312x0:1746x956/920x613/filters:focal(312x0:1746x956)/cdn.vox-cdn.com/uploads/chorus_image/image/37251612/pokemon-list.0.0.png');
 }
 
 /* UTILITIES */

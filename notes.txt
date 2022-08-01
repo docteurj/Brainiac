@@ -1,2 +1,18 @@
-Buttons (pictures of RPS): Disabled once one is clicked
+1 homepage - nav bar, clickable divs leading to game, 
+3 games
+about section
+
+Tic Tac Toe
+Buttons (pictures of RPS): Disabled once one is clicked and renenabled when they the 
 add counters
+
+Trivia
+Have an options between questions: once you click you can't change
+3 wrong answers and you reset 
+questions are worth 10 points
+if you get the right answer, score increases, question choice buttons reneabled
+
+
+APIs:
+https://pokeapi.co/
+https://opentdb.com/api_config.php

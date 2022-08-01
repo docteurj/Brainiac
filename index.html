@@ -1,26 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <title>Games</title>
 </head>
 
 <body>
-  <button id="rock"> Rock </button>
-  <button id="paper"> Paper </button>
-  <button id="scissor"> Scissors </button>
-  
-  <script src="script.js"></script>
-
- <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">Home</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+        <li class="nav1"><a href="index.html">Home</a></li>
+        <li class="services nav1">
+          <a href="/">Games</a>
+          <!-- DROPDOWN MENU -->
+          <ul class="dropdown">
+            <li class="nav1"><a href="rps.html">Rock-Paper-Scissors! </a></li>
+            <li class="nav1"><a href="picture.html">Guess that character!</a></li>
+            <li class="nav1"><a href="trivia.html">Trivia!</a></li>
+          </ul>
+        </li>
+        <li class="nav1"><a href="about.html">About</a></li>
+        <li class="nav1"><a href="contact.html">Contact</a></li>
+      </div>
+    </ul>
+  </nav>
+  <hr />
+  <div class="card">
+    <img
+      src="https://media.istockphoto.com/vectors/rock-paper-scissors-vector-illustration-vector-id1056840214?k=20&m=1056840214&s=170667a&w=0&h=XHMBHLV9gIpRoEvQfa4eMN-h2hfAqXx0gZ88YuU9Tmk="
+      alt="Game1" style="width:100%">
+    <div class="container">
+      <h4><b>Rock-Paper-Scissors!</b></h4>
+      <p>Game Desc.</p>
+      <button class="button" onclick="parent.location='rps.html'">Play</button>
+    </div>
+  </div>
+  <hr />
+  <div class="card">
+    <img src="https://www.chemistryviews.org/wp-content/uploads/legacy/common/images/thumbnails/source/17a6473b7c0.jpg"
+      alt="Game2" style="width:100%">
+    <div class="container">
+      <h4><b>Guess that character!</b></h4>
+      <p>Game Desc.</p>
+      <button class="button" onclick="parent.location='picture.html'">Play</button>
+    </div>
+  </div>
+  <hr />
+  <div class="card">
+    <img
+      src="https://media.istockphoto.com/vectors/trivia-word-made-with-colorful-hanging-letters-vector-id1303554344?k=20&m=1303554344&s=612x612&w=0&h=cT8WCC7JFrlNuJYPPuryWwmu9ldHNlfHSqGbDfJQzL4="
+      alt="Game3" style="width:100%">
+    <div class="container">
+      <h4><b>Trivia!</b></h4>
+      <p>Game Desc.</p>
+      <button class="button" onclick="parent.location='trivia.html'">Play</button>
+    </div>
+  </div>
+  <hr />
 </body>
+
+<footer class="footer">
+  <p>Information provided by <a href="https://pokeapi.co" target="_blank">PokeAPI</a></p>
+</footer>
 
 </html>

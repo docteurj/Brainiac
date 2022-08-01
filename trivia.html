@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="trivia.css" />
+  <script src="script.js"></script>
+  <title>Games</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">Trivia</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+        <li class="nav1"><a href="index.html">Home</a></li>
+        <li class="services nav1">
+          <a href="/">Games</a>
+          <!-- DROPDOWN MENU -->
+          <ul class="dropdown">
+            <li class="nav1"><a href="rps.html">Rock-Paper-Scissors! </a></li>
+            <li class="nav1"><a href="picture.html">Guess that character!</a></li>
+            <li class="nav1"><a href="trivia.html">Trivia!</a></li>
+          </ul>
+        </li>
+        <li class="nav1"><a href="about.html">About</a></li>
+        <li class="nav1"><a href="contact.html">Contact</a></li>
+      </div>
+    </ul>
+  </nav>
+</body>
+
+<body>
+  <div class="container">
+    <h1>Trivia!</h1>
+    <h3>Your score: <span id="score">[Score]</span></h3>
+
+    <div class="questionCard">
+      <div class="questionHeader">
+        for <span id="points">[10]</span> points:
+      </div>
+      <div id="question">[QUESTION HERE]</div>
+      <div id="choice">[ANSWER HERE]</div>
+      <div>
+        <input type="text" id="userAnswer" />
+        <input class="submit" type="submit" value="Submit!" id="submit" />
+      </div>
+      <div id = "strike">Strike: </div>
+    </div>
+    <div class="buttons">
+      <button id="film">Film Question</button>
+      <button id="cartoon">Cartoon Question</button>
+      <button id="tv">TV Question</button>
+    </div>
+  </div>
+  <script src="./trivia.js" defer></script>
+</body>
+
+</html>
