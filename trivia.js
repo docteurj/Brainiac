@@ -1,25 +1,25 @@
 `use strict`;
 
-// Helper function - gets a random integer up to (but not including) the maximum
-const getRandomInt = (max) => {
+// gets random integer
+const randomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-// Select the spans & divs where we'll display outputs.
+// display outputs
 const pointsSpan = document.querySelector("#points");
 const scoreSpan = document.querySelector("#score");
 const questionDiv = document.querySelector("#question");
 const strikeSpan = document.querySelector("#strike");
 const choiceSpan = document.querySelector("#choice")
 
-// Select the buttons and input fields where users can provide inputs.
+// buttons and inputs
 const filmButton = document.querySelector("#film");
 const cartoonButton = document.querySelector("#cartoon");
 const tvButton = document.querySelector("#tv");
 const submitButton = document.querySelector("#submit");
 const answerInputBox = document.querySelector("#userAnswer");
 
-// Starting variables - we'll fill replace these with the API
+// Default variables 
 let currentQuestion =
   "What cartoon character lives in a pineapple under the sea?";
 let currentAnswer = "spongebob";
@@ -29,7 +29,7 @@ let currentScore = 0;
 let currentStrike = 0;
 let currentQuestionLive = true;
 
-// Function to update the text on the board to match our variables.
+//update board text
 const updateBoard = () => {
   pointsSpan.textContent = currentPoints;
   scoreSpan.textContent = currentScore;
@@ -64,14 +64,12 @@ const checkAnswer = () => {
   updateBoard();
 };
 
-for (let char of answerInputBox.value) {
-  
-}
 
-// Attach that function to the submit button via an event listener.
+
+// when button clicked the function is ran
 submitButton.addEventListener("click", checkAnswer);
 
-// API call for the three question byttons on screen.
+// API data for the three question buttons on screen.
 //Film Questions
 const getFilmQuestion = async () => {
   const response = await fetch("https://opentdb.com/api.php?amount=50&category=11&type=multiple");
@@ -103,16 +101,18 @@ const getTVQuestion = async () => {
 };
 tvButton.addEventListener("click", getTVQuestion);
 
+
+
 const updateWithNewData = (data) => {
-  const i = getRandomInt(data.length);
+  const i = randomInt(data.results.length);
 
   // Update variables with new data
-  currentQuestion = data[i].question;
+  currentQuestion = data.results[i].question;
   currentAnswer = data[i].correct_answer;
   currentPoints = 10;
   currentChoice = data[i].incorrect_answers;
 
-  // Display the new question
+  // Display the new question and chouces
   updateBoard();
 };
 

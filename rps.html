@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="rps.css" />
-   <script src="script.js"></script>
-   <title>Games</title>
- </head>
-  
- <body>
-   <nav class="navbar">
-     <!-- LOGO -->
-     <div class="logo">Rock-Paper-Scissors!</div>
-     <!-- NAVIGATION MENU -->
-     <ul class="nav-links">
-       <!-- NAVIGATION MENUS -->
-       <div class="menu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="rps.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <script src="script.js"></script>
+  <title>Games</title>
+</head>
+
+<body>
+  <nav class="navbar1">
+    <!-- LOGO -->
+    <div class="logo">Rock-Paper-Scissors!</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
         <li class="nav1"><a href="index.html">Home</a></li>
         <li class="services nav1">
           <a href="/">Games</a>
           <!-- DROPDOWN MENU -->
-          <ul class="dropdown">
+          <ul class="dropdown1">
             <li class="nav1"><a href="rps.html">Rock-Paper-Scissors! </a></li>
             <li class="nav1"><a href="picture.html">Guess that character!</a></li>
             <li class="nav1"><a href="trivia.html">Trivia!</a></li>
@@ -32,8 +34,66 @@
       </div>
     </ul>
   </nav>
- </body>
-</html>
-  
-  
 
+  <!-- The buttons are right here -->
+  <style>
+    body {
+      margin: 25px;
+    }
+
+    div.polaroid {
+      width: 20%;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 25px;
+    }
+
+    div.container {
+      text-align: center;
+      padding: 10px 20px;
+    }
+  </style>
+  </head>
+
+  <body>
+
+
+    <div class="columns">
+      <div class="column">
+        <div class="column is-one-quarter">
+          <button id="rock"> <img src="https://www.nicepng.com/png/detail/278-2789894_pokemon-charmander-vector.png"
+              style="width:60%"> </button>
+          <div class="container">
+            <h1>Fire</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="column is-one-quarter">
+          <button id="paper"> <img
+              src="https://www.pngitem.com/pimgs/m/0-7894_squirtle-pokemon-squirtle-pokemon-go-hd-png-download.png"
+              style="width:60%"> </button>
+          <div class="container">
+            <h1>Water</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="column is-one-quarter">
+          <button id="scissor"> <img
+              src="https://www.kindpng.com/picc/m/695-6959690_bulbasaur-transparent-image-pokemon-bulbasaur-hd-png-download.png"
+              style="width:60%"> </button>
+          <div class="container">
+            <h1>Grass</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- buttons end here -->
+
+
+  </body>
+
+</html>
