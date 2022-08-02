@@ -13,9 +13,6 @@ const strikeSpan = document.querySelector("#strike");
 const choiceSpan = document.querySelector("#choice")
 
 // buttons and inputs
-const filmButton = document.querySelector("#film");
-const cartoonButton = document.querySelector("#cartoon");
-const tvButton = document.querySelector("#tv");
 const submitButton = document.querySelector("#submit");
 const answerInputBox = document.querySelector("#userAnswer");
 
@@ -27,20 +24,30 @@ let currentChoice = "Spongebob, Dexter, Courage, Popeye"
 let currentPoints = 10;
 let currentScore = 0;
 let currentStrike = 0;
-let currentQuestionLive = true;
+
+
+
+const allQuestionCategoryButtons = document.querySelectorAll(".category-question-button");
 
 //update board text
-const updateBoard = () => {
+const newBoard = () => {
   pointsSpan.textContent = currentPoints;
   scoreSpan.textContent = currentScore;
-  strikeSpan.textContent = "Strike:" + currentStrike;
+  strikeSpan.textContent = "Strike: " + currentStrike;
   questionDiv.textContent = currentQuestion;
-  choiceSpan.textContent = currentChoice
+  choiceSpan.textContent = currentChoice;
+};
+newBoard();
+
+const disableButton = () => {
+  allQuestionCategoryButtons.forEach(b => b.disabled = true)
 };
 
-// Call the function!
-updateBoard();
+const enableButton = () => {
+  allQuestionCategoryButtons.forEach(b => b.disabled = false)
+};
 
+disableButton()
 
 function removeCaps(string) {
   return string.toLowerCase()
@@ -54,65 +61,69 @@ const checkAnswer = () => {
 
   if (removeCaps(answerInputBox.value) === removeCaps(currentAnswer)) {
     currentScore += currentPoints;
+    enableButton();
+    submitButton.disabled = true;
   } else {
     currentStrike += 1;
   }
 
-  // if (currentStrike === 3) {
-  
-  // }
-  updateBoard();
+  if (currentStrike === 3) {
+    alert('Your score was ' + currentScore +'!')
+   currentQuestion = "What cartoon character lives in a pineapple under the sea?";
+   currentAnswer = "spongebob";
+   currentChoice = "Spongebob, Dexter, Courage, Popeye"
+   currentPoints = 10;
+   currentScore = 0;
+   currentStrike = 0;
+   newBoard();
+  } else {
+    newBoard();
+  }
 };
 
+
+//gets category id and gets questionb
+const getQuestion = async (categoryId) => {
+  const response = await fetch("https://opentdb.com/api.php?amount=50&category=" + categoryId + "&type=multiple&encode=base64");
+  const data = await response.json();
+  console.log(data);
+  newData(data);
+}
+
+
+allQuestionCategoryButtons.forEach(button => {
+  const category = button.getAttribute("category-id");
+  button.addEventListener("click", () => getQuestion(category));
+  submitButton.disabled = false;
+}); 
 
 
 // when button clicked the function is ran
 submitButton.addEventListener("click", checkAnswer);
 
-// API data for the three question buttons on screen.
-//Film Questions
-const getFilmQuestion = async () => {
-  const response = await fetch("https://opentdb.com/api.php?amount=50&category=11&type=multiple");
-  const data = await response.json();
-  console.log(data);
-
-  updateWithNewData(data);
-};
-filmButton.addEventListener("click", getFilmQuestion);
 
 
-//Cartoon Questions
-const getCartoonQuestion = async () => {
-  const response = await fetch("https://opentdb.com/api.php?amount=50&category=32&type=multiple");
-  const data = await response.json();
-  console.log(data);
-
-  updateWithNewData(data);
-};
-cartoonButton.addEventListener("click", getCartoonQuestion);
-
-//TV Questions
-const getTVQuestion = async () => {
-  const response = await fetch("https://opentdb.com/api.php?amount=50&category=14&type=multiple");
-  const data = await response.json();
-  console.log(data);
-
-  updateWithNewData(data);
-};
-tvButton.addEventListener("click", getTVQuestion);
-
-
-
-const updateWithNewData = (data) => {
+const newData = (data) => {
   const i = randomInt(data.results.length);
 
   // Update variables with new data
-  currentQuestion = data.results[i].question;
-  currentAnswer = data[i].correct_answer;
+  currentQuestion = atob(data.results[i].question);
+  currentAnswer = atob(data.results[i].correct_answer);
+  let answer = data.results[i].correct_answer
   currentPoints = 10;
-  currentChoice = data[i].incorrect_answers;
 
-  // Display the new question and chouces
-  updateBoard();
+  let choices = [...data.results[i].incorrect_answers];
+  choices[choices.length] = answer;
+  choices = choices.sort((a, b) => (Math.random() > .5) ? 1 : -1);
+
+  for (let x = 0; x < choices.length; x++) {
+    choices[x] = atob(choices[x])
+    console.log(choices[x])
+ }
+  
+  currentChoice = choices.join(', '); 
+  
+  // Display the new question and chouces  
+  newBoard();
 };
 

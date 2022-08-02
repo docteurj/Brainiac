@@ -1,3 +1,7 @@
+html {
+  background-color: whitesmoke;
+}
+
 .container {
   max-width: 90%;
   margin: 40px auto;
@@ -12,7 +16,8 @@ body {
   font-size: 40;
 }
 .about {
-  background-color: #d13b3b
+  background-color: white; 
+  border-color: black;
   text-align: center;
   width: 50%;
 }

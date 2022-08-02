@@ -1,5 +1,5 @@
 html {
-  background-image: url('https://images.hdqwalls.com/download/dark-abstract-black-minimal-4k-q0-1920x1080.jpg');
+  background-image: url('https://wallpaperset.com/w/full/d/d/5/462750.jpg')
 }
 
 .container {
@@ -192,7 +192,7 @@ hr {
 }
 
 .buttons button:hover {
-  background-color: #ff2600; 
+  background-color: #0433ff; 
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -203,7 +203,7 @@ hr {
 
 .questionCard {
 /*   background-color: #ff2600; */
-  background-image: linear-gradient(red, #000000, #ff2600);
+  background-image: linear-gradient(black, #000000, #000000);
   color: white;
   text-transform: uppercase;
   padding: 10px;
@@ -222,7 +222,7 @@ hr {
 }
 
 #points {
-  color: #ffffff;
+  color: #fffb00;
 /*   text-shadow: 4px 4px black; */
 /*   font-size: 30px; */
   font-size: 1.5rem;
@@ -273,6 +273,3 @@ input[type=text]:focus {
   transform: translateY(4px);
 }
 
-h1, h3 {
-  color: white;
-}
