@@ -18,12 +18,22 @@ const resetButton = document.querySelector("#reset");
 const submitButton = document.querySelector("#submit");
 const answerInputBox = document.querySelector("#userAnswer");
 
+let questionBoard = {
+  name: "doctor doom",
+  currentPoints: 10,
+  currentScore: 0,
+  currentStrike: 0,
+  currentImg: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/222-doctor-doom.jpg"
+};
+
 // Default variables 
 let currentAnswer = "doctor doom";
 let currentPoints = 10;
 let currentScore = 0;
 let currentStrike = 0;
 let currentImg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/222-doctor-doom.jpg"
+
+const validIds = [];
 
 
 //update board text
@@ -48,22 +58,28 @@ const checkAnswer = () => {
   if (removeCaps(answerInputBox.value) === removeCaps(currentAnswer)) {
     currentScore += currentPoints;
     getNextHero()
+    answerInputBox.value = "";
   } else {
+    alert("Incorrect!")
     currentStrike += 1;
     updateBoard()
+    answerInputBox.value = "";
   }
-  
+
   if (currentStrike == 5) {
+    answerInputBox.value = "";
     alert("Your total score was " + currentScore + "!");
-     currentAnswer = "doctor doom";
-     currentPoints = 10;
-     currentScore = 0;
-     currentStrike = 0;
-     currentImg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/222-doctor-doom.jpg"
-     updateBoard()
-  } 
-  
+    currentAnswer = "doctor doom";
+    currentPoints = 10;
+    currentScore = 0;
+    currentStrike = 0;
+    currentImg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/222-doctor-doom.jpg"
+    updateBoard()
+  }
 };
+
+submitButton.addEventListener("click", checkAnswer);
+
 
 heroButton.addEventListener("click", e => {
   currentStrike += 1;
@@ -72,28 +88,50 @@ heroButton.addEventListener("click", e => {
   updateBoard()
   if (currentStrike == 5) {
     alert("Your total score was " + currentScore + "!");
-    // currentAnswer = "doctor doom";
     currentScore = 0;
     currentStrike = 0;
-    // currentImg = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/222-doctor-doom.jpg"
     getNextHero()
     updateBoard()
   }
 })
 
-// when button clicked the function is ran
-submitButton.addEventListener("click", checkAnswer);
+const VALID_IDS = [];
+
+const getIDs = async () => {
+  const myQuery = "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json";
+  const response = await fetch(myQuery);
+  const data = await response.json();
+  data.forEach(d => {
+    VALID_IDS[VALID_IDS.length] = d.id;
+  });
+  console.log(VALID_IDS);
+};
+
+getIDs();
 
 // API data for the three question buttons on screen.
 //Get the next hero
 const getNextHero = async () => {
-  const i = randomInt(731);
-  const myQuery = `https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${i}.json`;
+  console.log(VALID_IDS);
+  const i = randomInt(VALID_IDS.length);
+  const id = VALID_IDS[i];
+  const myQuery = `https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${id}.json`;
   const response = await fetch(myQuery);
   const data = await response.json();
- updateWithNewData(data);
-  
+  updateWithNewData(data);
+  answerInputBox.value = "";
+  console.log(data)
+
 };
+
+
+resetButton.addEventListener("click", e => {
+  alert("Your total score was " + currentScore + "!");
+  currentScore = 0;
+  currentStrike = 0;
+  getNextHero()
+  updateBoard()
+})
 
 const updateWithNewData = (data) => {
   // Update variables with new data
@@ -103,5 +141,3 @@ const updateWithNewData = (data) => {
   // Display the new question and chouces
   updateBoard();
 };
-
-

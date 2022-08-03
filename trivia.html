@@ -39,18 +39,24 @@
   <div class="container">
     <h1>Trivia!</h1>
     <h3>Your score: <span id="score">[Score]</span></h3>
+    <h3 id="strike">Strike: </h3>
 
     <div class="questionCard">
       <div class="questionHeader">
         for <span id="points">[10]</span> points:
       </div>
       <div id="question">[QUESTION HERE]</div>
-      <div id="choice">[ANSWER HERE]</div>
-      <div>
-        <input type="text" id="userAnswer" />
-        <input class="submit" type="submit" value="Submit!" id="submit" />
-      </div>
-      <div id="strike">Strike: </div>
+      <form id="allChoices">
+        <input type="radio" name="answer" class="choiceRadios" onclick="checkAnswer(0)" id="choice0" value="">
+         <label for="choice0" class="choices"></label><br>
+        <input type="radio" name="answer" class="choiceRadios" onclick="checkAnswer(1)" id="choice1" value="">
+         <label for="choice1" class="choices"></label><br>
+        <input type="radio" name="answer" class="choiceRadios" onclick="checkAnswer(2)" id="choice2" value="">
+         <label for="choice2" class="choices"></label><br>
+        <input type="radio" name="answer" class="choiceRadios" onclick="checkAnswer(3)" id="choice3" value="">
+         <label for="choice3" class="choices"></label><br>
+        <input class="submit" id="userAnswer" type="submit" name="answer" value="Submit!" id="submit" hidden/>
+      </form>
     </div>
     <div class="buttons">
       <button class="category-question-button" category-id=15>Video Game Question</button>
@@ -63,3 +69,15 @@
 </body>
 
 </html>
+
+
+
+
+
+
+<!-- <form id="allChoices">
+        <p class="choices" onclick="checkAnswer(0)"></p>
+        <p class="choices" onclick="checkAnswer(1)"></p>
+        <p class="choices" onclick="checkAnswer(2)"></p>
+        <p class="choices" onclick="checkAnswer(3)"></p>
+      </form> -->

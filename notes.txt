@@ -32,7 +32,7 @@ after the 5th you lose??
 Jonathan To-Do:
 alerts start(how many chances) and end
 Ask about errors in APIs for picture game
-rese button for pictures
+reset button for pictures
 submit clears input 
 ask for help on trivia game (button enables/disables)
 work on names and organizations

@@ -12,6 +12,11 @@ const questionDiv = document.querySelector("#question");
 const strikeSpan = document.querySelector("#strike");
 const choiceSpan = document.querySelector("#choice")
 
+const choicesPlaces = document.querySelectorAll(".choices");
+console.log(choicesPlaces)
+
+const choiceRadio = document.querySelectorAll(".choiceRadios")
+
 // buttons and inputs
 const submitButton = document.querySelector("#submit");
 const answerInputBox = document.querySelector("#userAnswer");
@@ -20,12 +25,15 @@ const answerInputBox = document.querySelector("#userAnswer");
 let currentQuestion =
   "What cartoon character lives in a pineapple under the sea?";
 let currentAnswer = "spongebob";
-let currentChoice = "Spongebob, Dexter, Courage, Popeye"
+let currentChoices
+  = ["Spongebob", "Dexter", "Courage", "Popeye"];
 let currentPoints = 10;
 let currentScore = 0;
 let currentStrike = 0;
 
-
+for (let i = 0; i < currentChoices.length; i++) {
+  choicesPlaces[i].textContent = currentChoices[i];
+}
 
 const allQuestionCategoryButtons = document.querySelectorAll(".category-question-button");
 
@@ -35,7 +43,6 @@ const newBoard = () => {
   scoreSpan.textContent = currentScore;
   strikeSpan.textContent = "Strike: " + currentStrike;
   questionDiv.textContent = currentQuestion;
-  choiceSpan.textContent = currentChoice;
 };
 newBoard();
 
@@ -47,59 +54,79 @@ const enableButton = () => {
   allQuestionCategoryButtons.forEach(b => b.disabled = false)
 };
 
+const enableRadios = () => {
+
+}
+
 disableButton()
 
 function removeCaps(string) {
   return string.toLowerCase()
 }
 
+let answerFound = false;
 
 // Finish this function that checks the user's answer.
-const checkAnswer = () => {
+const checkAnswer = (index) => {
   console.log("You guessed:", answerInputBox.value);
   console.log("Correct answer:", currentAnswer);
+  console.log(choiceRadio[index]);
 
-  if (removeCaps(answerInputBox.value) === removeCaps(currentAnswer)) {
+  if (answerFound) {
+    window.alert("Correct Answer Already Found!");
+    return;
+  }
+  
+  choiceRadio[index].setAttribute("disabled", true);
+  if (removeCaps(choicesPlaces[index].textContent) === removeCaps(currentAnswer)) {
+    alert("Correct Answer!")
     currentScore += currentPoints;
+    newBoard();
     enableButton();
+    answerFound = true;
     submitButton.disabled = true;
   } else {
     currentStrike += 1;
   }
 
   if (currentStrike === 3) {
-    alert('Your score was ' + currentScore +'!')
-   currentQuestion = "What cartoon character lives in a pineapple under the sea?";
-   currentAnswer = "spongebob";
-   currentChoice = "Spongebob, Dexter, Courage, Popeye"
-   currentPoints = 10;
-   currentScore = 0;
-   currentStrike = 0;
-   newBoard();
+    alert('That is 3 strikes! Game Over! Your score was ' + currentScore + '!')
+    currentQuestion = "What cartoon character lives in a pineapple under the sea?";
+    currentAnswer = "spongebob";
+    choiceRadio.forEach(radio => {
+    radio.removeAttribute("disabled");
+    radio.checked = false;
+    })
+
+    for (let i = 0; i < currentChoices.length; i++) {
+      choicesPlaces[i].textContent = currentChoices[i];
+    }
+    currentPoints = 10;
+    currentScore = 0;
+    currentStrike = 0;
+    newBoard();
   } else {
     newBoard();
   }
 };
 
 
+
 //gets category id and gets questionb
 const getQuestion = async (categoryId) => {
   const response = await fetch("https://opentdb.com/api.php?amount=50&category=" + categoryId + "&type=multiple&encode=base64");
   const data = await response.json();
-  console.log(data);
   newData(data);
+  disableButton()
+  submitButton.disabled = false;
 }
 
 
 allQuestionCategoryButtons.forEach(button => {
   const category = button.getAttribute("category-id");
   button.addEventListener("click", () => getQuestion(category));
-  submitButton.disabled = false;
-}); 
+});
 
-
-// when button clicked the function is ran
-submitButton.addEventListener("click", checkAnswer);
 
 
 
@@ -118,11 +145,18 @@ const newData = (data) => {
 
   for (let x = 0; x < choices.length; x++) {
     choices[x] = atob(choices[x])
-    console.log(choices[x])
- }
-  
-  currentChoice = choices.join(', '); 
-  
+  }
+
+  for (let i = 0; i < choices.length; i++) {
+    choicesPlaces[i].textContent = choices[i];
+  }
+
+  choiceRadio.forEach(radio => {
+    radio.removeAttribute("disabled");
+    radio.checked = false;
+  })
+
+  answerFound = false;
   // Display the new question and chouces  
   newBoard();
 };

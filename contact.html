@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="style.css" />
-   <script src="script.js"></script>
-   <title>Games</title>
- </head>
-  
- <body>
-   <nav class="navbar">
-     <!-- LOGO -->
-     <div class="logo">Contact</div>
-     <!-- NAVIGATION MENU -->
-     <ul class="nav-links">
-       <!-- NAVIGATION MENUS -->
-       <div class="menu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <title>Games</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div><img class="animated-gif logo"
+        src="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g">
+      </img></div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
         <li class="nav1"><a href="index.html">Home</a></li>
         <li class="services nav1">
           <a href="/">Games</a>
@@ -32,8 +35,37 @@
       </div>
     </ul>
   </nav>
- </body>
-</html>
-  
-  
+  <hr />
+  <div class="big-container contact">
+    <img class="logo"
+      src="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g">
+    </img>
+
+
+    
+    <h1> Contact Us! </h1>
+    <p> Brainiac Games is still a growing company. Use this page to tell us about bugs you run into and other feedback you may have. Feel free to give suggestions and ask for help!<br></br> Feel free to follow us on all of our socials!</p>
+    <br>
+     <form id="contact-form">
+
+    <label for="fname"><h2>First Name</h2><br></label>
+    <input type="text" id="fname" name="firstname" placeholder="First Name" size="20" required>
+   </br>
+     <br>
+    <label for="lname"><h2>Last Name</h2><br></label>
+    <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
+   </br>
+     <br>
+      <label for="email"><h2>Email</h2><br></label>
+    <input type="text" id="email" name="email" placeholder="Email" size="26" required>
+   </br>
+     <br>
+    <label for="message"><h2>Message</h2><br></label>
+    <textarea id="message" name="message" placeholder="..." style="height:100px" required></textarea>
+   </br>
+    <button id="submit" type="submit">
+      Submit
+    </button>
+  </form>
+  </div>
 
