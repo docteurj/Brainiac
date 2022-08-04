@@ -1,5 +1,5 @@
 `use strict`;
-
+alert("You have 5 strikes! See how far you can get!")
 // gets random integer
 const randomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
@@ -68,8 +68,8 @@ const checkAnswer = () => {
 
   if (currentStrike == 5) {
     answerInputBox.value = "";
-    alert("Your total score was " + currentScore + "!");
-    currentAnswer = "doctor doom";
+    alert("Your total score was " + currentScore + "! This character's name is " + currentAnswer + "!");
+    currentAnswer = "Doctor Doom";
     currentPoints = 10;
     currentScore = 0;
     currentStrike = 0;

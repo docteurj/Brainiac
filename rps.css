@@ -1,5 +1,36 @@
-html {
-  background-image: url('https://wallpaperaccess.com/full/8621.jpg');
+html, body {
+  height: 100%;
+  width: 100%;
+  background-image: url('https://cdn.vox-cdn.com/thumbor/AT8nvneOScf7LKMFrC8dnLvTF_w=/312x0:1746x956/1400x788/filters:focal(312x0:1746x956):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/37251612/pokemon-list.0.0.png');
+}
+
+.container {
+  max-width: 90%;
+  margin: 40px auto;
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+}
+
+.buttons {
+  padding: 20px;
+}
+
+.buttons button {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1em;
+  border: 2px solid black;
+  color: black;
+  padding: 20px;
 }
 
 /* UTILITIES */
@@ -24,12 +55,12 @@ li.nav1 {
 }
 
 /* NAVBAR STYLING STARTS */
-.navbar1 {
+.navbar {
  display: flex;
  align-items: center;
  justify-content: space-between;
  padding: 20px;
- background-image: linear-gradient(red, #c0c0c0, black);
+ background-image: repeating-linear-gradient(black, red 63.87%);
  color: #fff;
 }
 
@@ -50,7 +81,7 @@ li.nav1 {
 }
 
 .menu li:hover {
- background-color: #444444;
+ background-color: #ff2600;
  border-radius: 5px;
  transition: 0.3s ease;
 }
@@ -64,8 +95,8 @@ li.nav1 {
  position: relative; 
 }
 
-.dropdown1 {
- background-image: linear-gradient(red, #7a7a7a, black);
+.dropdown {
+ background-image: repeating-linear-gradient(black, red 131.87%);
  padding: 1em 0;
  position: absolute; 
  display: none;
@@ -73,21 +104,21 @@ li.nav1 {
  top: 31px;
 }
 
-.dropdown1 li + li {
+.dropdown li + li {
  margin-top: 10px;
 }
 
-.dropdown1 li {
+.dropdown li {
  padding: 0.5em 1em;
  width: 8em;
  text-align: center;
 }
 
-.dropdown1 li:hover {
- background-color: #606060;
+.dropdown li:hover {
+ background-color: #ff2600;
 }
 
-.services:hover .dropdown1 {
+.services:hover .dropdown {
  display: block;
 }
 
@@ -103,19 +134,19 @@ li.nav1 {
 }
 .menu li:hover {
  display: inline-block;
- background-color:#606060;
+ background-color:#ff2600;
  transition: 0.3s ease;
 }
 .menu li + li {
  margin-top: 12px;
 }
 
-.dropdown1 {
+.dropdown {
  left: 50%;
  top: 30px;
  transform: translateX(35%);
 }
-.dropdown1 li:hover {
+.dropdown li:hover {
  background-color: #4c9e9e;
 }
 }
@@ -162,29 +193,163 @@ hr {
  color: #fff;
 }
 
-.button {
-  background-color: #fff;
-  border-color: #dbdbdb;
-  border-width: 1px;
-  cursor: pointer;
-  justify-content: center;
-  padding-bottom: calc(.5em - 1px);
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: calc(.5em - 1px);
-  text-align: center;
-  white-space: nowrap;
-  font-size: 1em;
-  border: 2px solid black;
-  color: black;
-  padding: 14px 28px;
-}
-.button:hover {
-  background-color: #77bb41; 
+.buttons button:hover {
+  background-color: #ff2600; 
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .nav1 a {
   text-decoration: none
+}
+
+.questionCard {
+/*   background-color: #ff2600; */
+  background-image: linear-gradient(red, #000000, #ff2600);
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ .questionCard #question {
+  margin: 10px;
+  text-shadow: 1px 1px black;
+  font-size: 1.2rem;
+}
+
+#points {
+  color: #ffffff;
+/*   text-shadow: 4px 4px black; */
+/*   font-size: 30px; */
+  font-size: 1.5rem;
+}
+
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #b51a00;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+#submit {
+  transition-duration: 0.4s;
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(.25em - .75px);
+  padding-left: .75em;
+  padding-right: .75em;
+  padding-top: calc(.25em - 75px);
+  text-align: center;
+  white-space: nowrap;
+  font-size: 1em;
+  border: 2px solid black;
+  color: black;
+
+}
+
+#submit:hover {
+  background-color: #b51a00; 
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#submit:active {
+  background-color: #b51a00;
+  box-shadow: 0 5px #232323;
+  transform: translateY(4px);
+}
+
+h1, h3 {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
+
+img.animated-gif{
+  width: 50px;
+  height: 50px;
+}
+
+.big-container {
+    margin: 60px auto;
+    width: 750px;
+    height: 300px;
+    background: #1b1b1d;
+    border: 2px solid #ff2600;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    box-shadow: 7px 5px 73px -50px red;
+}
+
+.big-container p {
+    margin: 15px auto;
+    color: white;
+    font-size: 15px;
+}
+
+.big-container h2 {
+    margin: 40px auto;
+    color: white;
+    font-size: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }

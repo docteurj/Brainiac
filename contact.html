@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <script src="script.js"></script>
-  <title>Games</title>
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g" />
+  <title> Brainiac</title>
 </head>
 
 <body>
@@ -30,42 +32,75 @@
             <li class="nav1"><a href="trivia.html">Trivia!</a></li>
           </ul>
         </li>
-        <li class="nav1"><a href="about.html">About</a></li>
-        <li class="nav1"><a href="contact.html">Contact</a></li>
+        <li class="nav1"><a href="contact.html">About</a></li>
+        <li class="nav1"><a href="#contact">Contact</a></li>
       </div>
     </ul>
   </nav>
-  <hr />
+
+
+
+
+
+  <div class="big-container about">
+    <h1><b>About Brainiac Games!</b></h1>
+    <p> Corporate Headquarters <br><b>Miami, Florida</b><br> <br> Founded in 2022, Braniac Games is an American company founded
+      by Kenny, Jonathan, and Natalie.<br></br>The company is
+      headquartered in Florida and has more than 40 offices worldwide. We strive to create a fun, online outlet for
+      those who may not have </p>
+
+  </div>
+
+
+  <div class="big-container aboutmakers">
+    <h1><b>About the Makers!</b></h1>
+    <p><b>Jonathan</b>: From Boca Raton, FL. Going to UF for Computer Science. 18 year old aspiring game designer.<br><br><b>Kenny</b>: From Tampa, FL. Going to UCF for Computer Engineering. 18 Years old. <br><br><b>Natalie</b>: From Fort Lauderdale, FL. Going to UCF but is currently undecided. Like the other makers, she is also 18 years old. </p>
+  </div>
+
+
+
+
+  <a id="contact"></a>
   <div class="big-container contact">
     <img class="logo"
       src="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g">
     </img>
-
-
-    
     <h1> Contact Us! </h1>
-    <p> Brainiac Games is still a growing company. Use this page to tell us about bugs you run into and other feedback you may have. Feel free to give suggestions and ask for help!<br></br> Feel free to follow us on all of our socials!</p>
+    <p> Brainiac Games is still a growing company. Use this page to tell us about bugs you run into and other feedback
+      you may have. Feel free to give suggestions and ask for help!<br></br> Feel free to follow us on all of our
+      socials!</p>
     <br>
-     <form id="contact-form">
+    <form id="contact-form">
 
-    <label for="fname"><h2>First Name</h2><br></label>
-    <input type="text" id="fname" name="firstname" placeholder="First Name" size="20" required>
-   </br>
-     <br>
-    <label for="lname"><h2>Last Name</h2><br></label>
-    <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
-   </br>
-     <br>
-      <label for="email"><h2>Email</h2><br></label>
-    <input type="text" id="email" name="email" placeholder="Email" size="26" required>
-   </br>
-     <br>
-    <label for="message"><h2>Message</h2><br></label>
-    <textarea id="message" name="message" placeholder="..." style="height:100px" required></textarea>
-   </br>
-    <button id="submit" type="submit">
-      Submit
-    </button>
-  </form>
+      <label for="fname">
+        <h2>First Name</h2><br>
+      </label>
+      <input type="text" id="fname" name="firstname" placeholder="First Name" size="20" required>
+      </br>
+      <br>
+      <label for="lname">
+        <h2>Last Name</h2><br>
+      </label>
+      <input type="text" id="lname" name="lastname" placeholder="Last Name" required>
+      </br>
+      <br>
+      <label for="email">
+        <h2>Email</h2><br>
+      </label>
+      <input type="text" id="email" name="email" placeholder="Email" size="26" required>
+      </br>
+      <br>
+      <label for="message">
+        <h2>Message</h2><br>
+      </label>
+      <textarea id="message" name="message" placeholder="..." style="height:100px" required></textarea>
+      </br>
+      <button id="submit" type="submit">
+        Submit
+      </button>
+    </form>
   </div>
+  <script src="./contact.js" defer></script>
+</body>
 
+</html>

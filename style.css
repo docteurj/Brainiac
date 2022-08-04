@@ -5,6 +5,34 @@ html, body {
   
 }
 
+
+.big-container.about{
+  text-align: center;
+  background-color: black;
+  margin: 30px;
+  padding: 2px;
+  color: white;
+  float: left;
+  width: 45%;
+  height: 300px;
+  border: 2px solid red;
+  box-shadow: 0px 0px 165px 10px red;
+}
+
+
+
+.big-container.aboutmakers {
+    background-color: black;
+    margin: 30px;
+    padding: 2px;
+    color: white;
+    float: right;
+    width: 45%;
+    height: 300px;
+    border: 2px solid red;
+    box-shadow: 0px 0px 165px 10px red;
+}
+
 /* UTILITIES */
 * {
     margin: 0;
@@ -54,7 +82,7 @@ li.nav1 {
 }
 
 .menu li:hover {
- background-color: #444444;
+ background-color: #ff2600;
  border-radius: 5px;
  transition: 0.3s ease;
 }
@@ -69,7 +97,7 @@ li.nav1 {
 }
 
 .dropdown {
- background-image: linear-gradient(red, #7a7a7a, black);
+ background-image: repeating-linear-gradient(black, red 131.87%);
  padding: 1em 0;
  position: absolute; 
  display: none;
@@ -88,7 +116,7 @@ li.nav1 {
 }
 
 .dropdown li:hover {
- background-color: #606060;
+ background-color: #ff2600;
 }
 
 .services:hover .dropdown {
@@ -107,7 +135,7 @@ li.nav1 {
 }
 .menu li:hover {
  display: inline-block;
- background-color:#606060;
+ background-color:#ff2600;
  transition: 0.3s ease;
 }
 .menu li + li {
@@ -129,11 +157,6 @@ img.animated-gif{
   height: 50px;
 }
 
-
-
-.footer a {
- color: #fff;
-}
 /* styles for buttons */
 .button {
   background-color: #fff;
@@ -172,7 +195,7 @@ img.animated-gif{
 }
 
 .big-container.contact {
-  margin: 60px auto; 
+  margin-top: 400px; 
   width: 1200px;
   height: fit-content; 
   background: #1b1b1d;
@@ -206,12 +229,24 @@ img.animated-gif{
 
 /* contact page */
 textarea {
+/*   width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #b51a00;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff; */
   width: 130px;
   box-sizing: border-box;
   border: 2px solid #b51a00;
   border-radius: 4px;
   font-size: 16px;
   background-color: #ffffff;
+  padding: 10px;
+  transition: width 0.4s ease-in-out;
+}
+
+textarea:focus {
+  width: 45%;
 }
 
 input[type=text] {
@@ -265,4 +300,8 @@ form {
   text-align: center;
   padding: 3rem 1.5rem 2rem;
 
+}
+
+.footer a {
+ color: #fff;
 }

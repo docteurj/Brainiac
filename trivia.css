@@ -58,7 +58,7 @@ li.nav1 {
  align-items: center;
  justify-content: space-between;
  padding: 20px;
- background-image: linear-gradient(red, #c0c0c0, black);
+ background-image: repeating-linear-gradient(black, red 63.87%);
  color: #fff;
 }
 
@@ -79,7 +79,7 @@ li.nav1 {
 }
 
 .menu li:hover {
- background-color: #444444;
+ background-color: #ff2600;
  border-radius: 5px;
  transition: 0.3s ease;
 }
@@ -94,7 +94,7 @@ li.nav1 {
 }
 
 .dropdown {
- background-image: linear-gradient(red, #7a7a7a, black);
+ background-image: repeating-linear-gradient(black, red 131.87%);
  padding: 1em 0;
  position: absolute; 
  display: none;
@@ -113,7 +113,7 @@ li.nav1 {
 }
 
 .dropdown li:hover {
- background-color: #606060;
+ background-color: #ff2600;
 }
 
 .services:hover .dropdown {
@@ -132,7 +132,7 @@ li.nav1 {
 }
 .menu li:hover {
  display: inline-block;
- background-color:#606060;
+ background-color:#ff2600;
  transition: 0.3s ease;
 }
 .menu li + li {
@@ -176,20 +176,6 @@ hr {
   border-radius: 5px;
 }
 
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-image: linear-gradient(black, #c0c0c0, black);
-  color: white;
-  text-align: center;
-  padding: 3rem 1.5rem 2rem;
-
-}
-
-.footer a {
- color: #fff;
-}
 
 .buttons button:hover {
   background-color: #ff2600; 
@@ -277,4 +263,23 @@ h1, h3 {
   color: white;
 }
 
-#
+img.animated-gif{
+  width: 50px;
+  height: 50px;
+}
+
+/* styles for footer */
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: repeating-linear-gradient(black, red 4.87%);
+  color: white;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+
+}
+
+.footer a {
+ color: #fff;
+}

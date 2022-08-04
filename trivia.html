@@ -7,13 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="trivia.css" />
   <script src="script.js"></script>
-  <title>Games</title>
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g" />
+  <title> Brainiac</title>
 </head>
 
 <body>
   <nav class="navbar">
     <!-- LOGO -->
-    <div class="logo">Trivia</div>
+    <div><img class="animated-gif logo"
+        src="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/200.gif?cid=ecf05e479kdsdfuqv8azihdig9qpehhxo6kz3iinhirexed4&rid=200.gif&ct=g">
+      </img></div>
     <!-- NAVIGATION MENU -->
     <ul class="nav-links">
       <!-- NAVIGATION MENUS -->
@@ -23,13 +27,13 @@
           <a href="/">Games</a>
           <!-- DROPDOWN MENU -->
           <ul class="dropdown">
-            <li class="nav1"><a href="rps.html">Rock-Paper-Scissors! </a></li>
-            <li class="nav1"><a href="picture.html">Guess that character!</a></li>
-            <li class="nav1"><a href="trivia.html">Trivia!</a></li>
+            <li class="nav1"><a href="rps.html">Fire-Water-Grass!</a></li>
+            <li class="nav1"><a href="picture.html">Comiguess!</a></li>
+            <li class="nav1"><a href="trivia.html">Quiz Room!</a></li>
           </ul>
         </li>
-        <li class="nav1"><a href="about.html">About</a></li>
-        <li class="nav1"><a href="contact.html">Contact</a></li>
+        <li class="nav1"><a href="contact.html">About</a></li>
+        <li class="nav1"><a href="contact.html#contact">Contact</a></li>
       </div>
     </ul>
   </nav>
@@ -37,7 +41,7 @@
 
 <body>
   <div class="container">
-    <h1>Trivia!</h1>
+    <h1>Quiz Room!</h1>
     <h3>Your score: <span id="score">[Score]</span></h3>
     <h3 id="strike">Strike: </h3>
 
@@ -55,7 +59,7 @@
          <label for="choice2" class="choices"></label><br>
         <input type="radio" name="answer" class="choiceRadios" onclick="checkAnswer(3)" id="choice3" value="">
          <label for="choice3" class="choices"></label><br>
-        <input class="submit" id="userAnswer" type="submit" name="answer" value="Submit!" id="submit" hidden/>
+        <input class="submit" id="userAnswer" type="submit" name="answer" value="Submit!" id="submit" hidden />
       </form>
     </div>
     <div class="buttons">
@@ -67,6 +71,11 @@
   </div>
   <script src="./trivia.js" defer></script>
 </body>
+
+<footer class="footer">
+  <p>Made with <a href="https://opentdb.com/api_config.php">OpenTDB</a></p>
+</footer>
+
 
 </html>
 

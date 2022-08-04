@@ -30,13 +30,9 @@ have 5 guessees
 after the 5th you lose??
 
 Jonathan To-Do:
-alerts start(how many chances) and end
-Ask about errors in APIs for picture game
-reset button for pictures
-submit clears input 
-ask for help on trivia game (button enables/disables)
-work on names and organizations
-finialize design of page
+fix rps
+add bios
+work on slides
 
 APIs:
 https://akabab.github.io/superhero-api/api/glossary.html

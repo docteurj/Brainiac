@@ -22,11 +22,9 @@ const submitButton = document.querySelector("#submit");
 const answerInputBox = document.querySelector("#userAnswer");
 
 // Default variables 
-let currentQuestion =
-  "What cartoon character lives in a pineapple under the sea?";
-let currentAnswer = "spongebob";
-let currentChoices
-  = ["Spongebob", "Dexter", "Courage", "Popeye"];
+let currentQuestion;
+let currentAnswer;
+let currentChoices = [];
 let currentPoints = 10;
 let currentScore = 0;
 let currentStrike = 0;
@@ -74,9 +72,10 @@ const checkAnswer = (index) => {
 
   if (answerFound) {
     window.alert("Correct Answer Already Found!");
+    choiceRadio[index].checked = false
     return;
   }
-  
+
   choiceRadio[index].setAttribute("disabled", true);
   if (removeCaps(choicesPlaces[index].textContent) === removeCaps(currentAnswer)) {
     alert("Correct Answer!")
@@ -91,11 +90,10 @@ const checkAnswer = (index) => {
 
   if (currentStrike === 3) {
     alert('That is 3 strikes! Game Over! Your score was ' + currentScore + '!')
-    currentQuestion = "What cartoon character lives in a pineapple under the sea?";
-    currentAnswer = "spongebob";
+    getQuestion(32);
     choiceRadio.forEach(radio => {
-    radio.removeAttribute("disabled");
-    radio.checked = false;
+      radio.removeAttribute("disabled");
+      radio.checked = false;
     })
 
     for (let i = 0; i < currentChoices.length; i++) {
@@ -121,13 +119,13 @@ const getQuestion = async (categoryId) => {
   submitButton.disabled = false;
 }
 
+getQuestion(32);
+
 
 allQuestionCategoryButtons.forEach(button => {
   const category = button.getAttribute("category-id");
   button.addEventListener("click", () => getQuestion(category));
 });
-
-
 
 
 const newData = (data) => {
