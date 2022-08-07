@@ -87,7 +87,7 @@ heroButton.addEventListener("click", e => {
   getNextHero()
   updateBoard()
   if (currentStrike == 5) {
-    alert("Your total score was " + currentScore + "!");
+    alert("Your total score was " + currentScore + "! This character's name is " + currentAnswer + "!");
     currentScore = 0;
     currentStrike = 0;
     getNextHero()
@@ -126,7 +126,7 @@ const getNextHero = async () => {
 
 
 resetButton.addEventListener("click", e => {
-  alert("Your total score was " + currentScore + "!");
+  alert("Your total score was " + currentScore + "! This character's name is " + currentAnswer + "!");
   currentScore = 0;
   currentStrike = 0;
   getNextHero()

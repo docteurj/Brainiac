@@ -66,8 +66,6 @@ let answerFound = false;
 
 // Finish this function that checks the user's answer.
 const checkAnswer = (index) => {
-  console.log("You guessed:", answerInputBox.value);
-  console.log("Correct answer:", currentAnswer);
   console.log(choiceRadio[index]);
 
   if (answerFound) {
@@ -89,7 +87,7 @@ const checkAnswer = (index) => {
   }
 
   if (currentStrike === 3) {
-    alert('That is 3 strikes! Game Over! Your score was ' + currentScore + '!')
+    alert('That is 3 strikes! Game Over! Your score was ' + currentScore + '!' + ' The correct answer was ' + currentAnswer)
     getQuestion(32);
     choiceRadio.forEach(radio => {
       radio.removeAttribute("disabled");
